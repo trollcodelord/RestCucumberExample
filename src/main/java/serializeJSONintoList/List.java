@@ -4,7 +4,7 @@ public class List {
 	
 	private String dt;
 	private Main main;
-	private Weather weather;
+	private Weather[] weather;
 	private Clouds clouds;
 	private Wind wind;
 	private Rain rain;
@@ -27,10 +27,10 @@ public class List {
 	public void setMain(Main main) {
 		this.main = main;
 	}
-	public Weather getWeather() {
+	public Weather[] getWeather() {
 		return weather;
 	}
-	public void setWeather(Weather weather) {
+	public void setWeather(Weather[] weather) {
 		this.weather = weather;
 	}
 	public Clouds getClouds() {

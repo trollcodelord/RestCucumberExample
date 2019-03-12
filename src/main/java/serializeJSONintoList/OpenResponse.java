@@ -5,7 +5,7 @@ public class OpenResponse {
 	public String cod;
 	private int message;
 	private int cnt;
-	private List list;
+	private List[] list;
 	
 	
 	
@@ -29,10 +29,10 @@ public class OpenResponse {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
-	public List getList() {
+	public List[] getList() {
 		return list;
 	}
-	public void setList(List list) {
+	public void setList(List[] list) {
 		this.list = list;
 	}
 	

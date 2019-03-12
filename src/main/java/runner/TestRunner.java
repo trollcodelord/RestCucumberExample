@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 
 @CucumberOptions(
 		
-		features ="/Users/a121yn0n/Documents/workspace/RestAssuredFrameWork/src/main/java/Features/OpenAPI.feature", // path of the features files
+		features ="/Users/a121yn0n/git/as/RestAssuredFrameWork/src/main/java/runner/Features/OpenAPI.feature", // path of the features files
 		glue={"/RestAssuredFrameWork/src/test/java/testpackage"}, //step definitation path of file
 		//format= {"pretty","html:test-outout", "json:json_output/cucumber.json", "junit:junit_xml/cucumber.xml"},
 		monochrome= true, // display  the console output in proper format

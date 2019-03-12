@@ -6,9 +6,11 @@ import java.util.List;
 import cucumber.api.java.en.Then;
 import io.cucumber.datatable.DataTableType;
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
+import junit.framework.Assert;
 import serializeJSONintoList.OpenResponse;
 
 public class ExampleRest {
@@ -21,6 +23,8 @@ public class ExampleRest {
 		{
 		RestAssured.baseURI = "https://api.openweathermap.org";
 		RequestSpecification httpRequest = RestAssured.given();
+		
+		
 		
 		//httpRequest.param("zip", "94040,us ");
 		//httpRequest.param("appid", "b80b1f49981e23b2c1a5187cb02e80d3");
@@ -39,15 +43,16 @@ public class ExampleRest {
 		ResponseBody body= response.getBody();
 		String bodyValue = body.asString();
 		
+		Assert.assertTrue(bodyValue.contains("cod"));
 		
-		OpenResponse[] openresponse = 	response.jsonPath().getObject("cod", OpenResponse[].class);
+		JsonPath jsonPathEvalutor =  response.jsonPath();
+		String statuscode =  jsonPathEvalutor.get("cod");
 		
-		for(OpenResponse open : openresponse ) {
-			
-		System.out.println(open.cod);
+		Assert.assertTrue(statuscode.equalsIgnoreCase("200"));
+		
+		
+		
 		}
-		
-	}
 	}
 
 
